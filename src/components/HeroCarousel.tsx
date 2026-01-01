@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './HeroCarousel.css';
 
 interface Slide {
@@ -9,6 +9,9 @@ interface Slide {
 }
 
 const HeroCarousel: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
   const slides: Slide[] = [
     {
       id: 1210,
@@ -39,6 +42,26 @@ const HeroCarousel: React.FC = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const scrollToServices = () => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      navigate('/');
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // If already on home page, just scroll
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -99,9 +122,9 @@ const HeroCarousel: React.FC = () => {
               Quality construction, rental properties, and custom homes built with craftsmanship and care
             </p>
             <div className="carousel-buttons">
-              <a href="#services" className="btn btn-primary">
+              <button onClick={scrollToServices} className="btn btn-primary">
                 Our Services
-              </a>
+              </button>
               <Link to="/contact" className="btn btn-secondary">
                 Get in Touch
               </Link>

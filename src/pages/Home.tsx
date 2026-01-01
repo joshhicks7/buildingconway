@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <HeroCarousel />
 
       {/* What We Do Section - Split Layout */}
-      <section id="services" className="what-we-do">
+      <section className="what-we-do">
         <ScrollAnimation animation="fade-in">
           <div className="what-we-do-wrapper">
             <ScrollAnimation animation="slide-right" delay={100}>
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
 
         {/* Services Grid with Images */}
         <div className="container">
-          <div className="services-grid">
+          <div id="services" className="services-grid">
             <ScrollAnimation animation="scale" delay={100}>
               <div className="service-card featured">
                 <div className="service-image-wrapper">
