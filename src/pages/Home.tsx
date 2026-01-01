@@ -74,6 +74,9 @@ const Home: React.FC = () => {
 
             <ScrollAnimation animation="fade-in" delay={200}>
               <div className="service-card">
+                <div className="service-image-wrapper">
+                  <div className="service-icon-background">🏠</div>
+                </div>
                 <div className="service-content">
                   <div className="service-icon">🏠</div>
                   <h3>Rental Properties</h3>
@@ -95,6 +98,9 @@ const Home: React.FC = () => {
 
             <ScrollAnimation animation="fade-in" delay={300}>
               <div className="service-card">
+                <div className="service-image-wrapper">
+                  <div className="service-icon-background">✨</div>
+                </div>
                 <div className="service-content">
                   <div className="service-icon">✨</div>
                   <h3>Custom Homes</h3>
@@ -110,6 +116,9 @@ const Home: React.FC = () => {
 
             <ScrollAnimation animation="fade-in" delay={400}>
               <div className="service-card">
+                <div className="service-image-wrapper">
+                  <div className="service-icon-background">🔧</div>
+                </div>
                 <div className="service-content">
                   <div className="service-icon">🔧</div>
                   <h3>Property Management</h3>
