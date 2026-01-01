@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Keller Johnson Construction Website
+
+A modern, professional website for Keller Johnson Construction built with React and TypeScript.
+
+## Features
+
+- **Modern Design**: Clean, professional design with smooth animations
+- **Responsive**: Fully responsive layout that works on all devices
+- **Fast Navigation**: Client-side routing with React Router
+- **Professional Theme**: Elegant color scheme with gold accents (#c9a961)
+- **All Original Content**: Preserves all images and pages from the original site
+
+## Pages
+
+- **Home**: Hero section, features, and project previews
+- **About Us**: Company information, mission, and values
+- **Through The Years**: Gallery of all completed projects
+- **Corporate Hangar**: Details about the corporate airplane hangar project
+- **Museum Plaza**: Information about the museum plaza construction
+- **Residential**: Residential property construction and rental information
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
