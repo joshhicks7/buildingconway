@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollAnimation from './ScrollAnimation';
 import './Testimonials.css';
 
 interface Testimonial {
@@ -39,30 +40,34 @@ const Testimonials: React.FC = () => {
   return (
     <section className="testimonials">
       <div className="container">
-        <div className="testimonials-header">
-          <h2 className="section-title">What Our Clients Say</h2>
-          <p className="section-subtitle">
-            Don't just take our word for it. Here's what our clients have to say about working with us.
-          </p>
-        </div>
+        <ScrollAnimation animation="fade-in">
+          <div className="testimonials-header">
+            <h2 className="section-title">What Our Clients Say</h2>
+            <p className="section-subtitle">
+              Don't just take our word for it. Here's what our clients have to say about working with us.
+            </p>
+          </div>
+        </ScrollAnimation>
 
         <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-card">
-              <div className="testimonial-rating">
-                {renderStars(testimonial.rating)}
-              </div>
-              <p className="testimonial-text">"{testimonial.text}"</p>
-              <div className="testimonial-author">
-                <div className="author-info">
-                  <h4 className="author-name">{testimonial.name}</h4>
-                  <p className="author-role">
-                    {testimonial.role}
-                    {testimonial.company && ` • ${testimonial.company}`}
-                  </p>
+          {testimonials.map((testimonial, index) => (
+            <ScrollAnimation key={testimonial.id} animation="fade-in" delay={index * 200}>
+              <div className="testimonial-card">
+                <div className="testimonial-rating">
+                  {renderStars(testimonial.rating)}
+                </div>
+                <p className="testimonial-text">"{testimonial.text}"</p>
+                <div className="testimonial-author">
+                  <div className="author-info">
+                    <h4 className="author-name">{testimonial.name}</h4>
+                    <p className="author-role">
+                      {testimonial.role}
+                      {testimonial.company && ` • ${testimonial.company}`}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

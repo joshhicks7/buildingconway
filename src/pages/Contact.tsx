@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ScrollAnimation from '../components/ScrollAnimation';
 import './Contact.css';
 
 const Contact: React.FC = () => {
@@ -38,41 +39,50 @@ const Contact: React.FC = () => {
       <section className="contact-content">
         <div className="container">
           <div className="contact-grid">
-            <div className="contact-info">
-              <h2>Get in Touch</h2>
-              <p>
-                Whether you're looking to build a new home, need commercial construction 
-                services, or have questions about our rental properties, we're here to help.
-              </p>
-              
-              <div className="contact-details">
-                <div className="contact-detail-item">
-                  <div className="detail-icon">📍</div>
-                  <div className="detail-content">
-                    <h3>Address</h3>
-                    <p>720 S Harkrider St<br />Conway, AR 72032</p>
-                  </div>
-                </div>
+            <ScrollAnimation animation="slide-right" delay={100}>
+              <div className="contact-info">
+                <h2>Get in Touch</h2>
+                <p>
+                  Whether you're looking to build a new home, need commercial construction 
+                  services, or have questions about our rental properties, we're here to help.
+                </p>
                 
-                <div className="contact-detail-item">
-                  <div className="detail-icon">📞</div>
-                  <div className="detail-content">
-                    <h3>Phone</h3>
-                    <p><a href="tel:501-514-5819">501-514-5819</a></p>
-                  </div>
-                </div>
-                
-                <div className="contact-detail-item">
-                  <div className="detail-icon">✉️</div>
-                  <div className="detail-content">
-                    <h3>Email</h3>
-                    <p><a href="mailto:kellerjohnson@conwaycorp.net">kellerjohnson@conwaycorp.net</a></p>
-                  </div>
+                <div className="contact-details">
+                  <ScrollAnimation animation="fade-in" delay={200}>
+                    <div className="contact-detail-item">
+                      <div className="detail-icon">📍</div>
+                      <div className="detail-content">
+                        <h3>Address</h3>
+                        <p>720 S Harkrider St<br />Conway, AR 72032</p>
+                      </div>
+                    </div>
+                  </ScrollAnimation>
+                  
+                  <ScrollAnimation animation="fade-in" delay={300}>
+                    <div className="contact-detail-item">
+                      <div className="detail-icon">📞</div>
+                      <div className="detail-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:501-514-5819">501-514-5819</a></p>
+                      </div>
+                    </div>
+                  </ScrollAnimation>
+                  
+                  <ScrollAnimation animation="fade-in" delay={400}>
+                    <div className="contact-detail-item">
+                      <div className="detail-icon">✉️</div>
+                      <div className="detail-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:kellerjohnson@conwaycorp.net">kellerjohnson@conwaycorp.net</a></p>
+                      </div>
+                    </div>
+                  </ScrollAnimation>
                 </div>
               </div>
-            </div>
+            </ScrollAnimation>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <ScrollAnimation animation="slide-left" delay={200}>
+              <form className="contact-form" onSubmit={handleSubmit}>
               <h2>Send Us a Message</h2>
               
               <div className="form-group">
@@ -129,7 +139,8 @@ const Contact: React.FC = () => {
               <button type="submit" className="btn btn-primary">
                 Send Message
               </button>
-            </form>
+              </form>
+            </ScrollAnimation>
           </div>
         </div>
       </section>

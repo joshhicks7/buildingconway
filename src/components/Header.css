@@ -34,11 +34,17 @@
   height: 65px;
   width: auto;
   transition: transform var(--transition-base);
-  filter: drop-shadow(var(--shadow-sm));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  padding: var(--spacing-xs);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo:hover {
   transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .nav {
